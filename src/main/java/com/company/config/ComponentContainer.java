@@ -11,7 +11,7 @@ public class ComponentContainer {
     public static final String NAME = "KundalikFikrlarMaqsadlarBot";
     public static final String TOKEN = "5559421571:AAGrJU4DKp6AM5fxhKcO3-B3EGGPsoi-WvM";
     public static final String ADMIN = "1438229631";
-    public static final String PATH = "src/main/resources/serviceAccountKey.json";
+    public static final String PATH = "/app/src/main/resources/serviceAccountKey.json";
 
     public static TelegramBot MY_TELEGRAM_BOT;
 
