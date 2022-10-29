@@ -53,6 +53,8 @@ public class TelegramBotService {
     }
 
     private String checkNumber(String phoneNumber) {
+        if (!phoneNumber.startsWith("+")) phoneNumber = "+" + phoneNumber;
+
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < phoneNumber.length(); i++) {
             if (phoneNumber.charAt(i) != ' ') {
