@@ -1,3 +1,1 @@
-worker: sh target/bin/CashbackBot
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.company.Main
-web: java -jar -Dserver.port=$PORT target/java-getting-started-1.0.jar
+web: java -jar target/make-cv-bot-1.0-SNAPSHOT-jar-with-dependencies.jar
