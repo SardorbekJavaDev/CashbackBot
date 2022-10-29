@@ -11,13 +11,10 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 
 public class Main {
 
-//    public static final String PORT = System.getenv("PORT");
 
     public static void main(String[] args) {
         try {
@@ -37,13 +34,14 @@ public class Main {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
-//        File file = new File(ComponentContainer.PATH);
-//        System.out.println("absolute path "+file.getAbsolutePath());
+        System.out.println(ComponentContainer.PATH);
+        File file = new File(ComponentContainer.PATH);
+        System.out.println(file.getPath());
+        System.out.println("absolute path "+file.getAbsolutePath());
         FileInputStream serviceAccount = null;
         FirebaseOptions options;
         try {
-            serviceAccount = new FileInputStream(ComponentContainer.PATH);
+            serviceAccount = new FileInputStream(file);
             options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://kashback-b3a23-default-rtdb.firebaseio.com")

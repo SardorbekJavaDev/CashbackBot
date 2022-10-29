@@ -11,7 +11,7 @@ public class ComponentContainer {
     public static final String NAME = "panda_cashbot";
     public static final String TOKEN = "5774652487:AAFPup9Dg-ihLoIZOAI564wgoJOc1IR30sc";
     public static final String ADMIN = "816267587";
-    public static final String PATH = "/app/src/main/resources/serviceAccountKey.json";
+    public static final String PATH = "src/main/resources/serviceAccountKey.json";
 
     public static TelegramBot MY_TELEGRAM_BOT;
 
