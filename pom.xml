@@ -97,5 +97,7 @@
     <!--    web: java -jar target/java-getting-started-1.0.jar-->
 
 <!--    web: java -cp target/classes/:target/dependency/* com.company.Main   true-->
+<!--    web: java -jar -Dserver.port=$PORT target/CashbackBot-1.0-jar-with-dependencies.jar shunda ishlagandi-->
+
 
 </project>
