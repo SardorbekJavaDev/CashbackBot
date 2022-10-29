@@ -1,1 +1,1 @@
-worker: sh target/bin/worker
+web: java -cp target/classes/:target/dependency/* com.company.Main
