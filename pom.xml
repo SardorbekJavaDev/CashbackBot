@@ -94,9 +94,12 @@
 <!--                </configuration>-->
 <!--            </plugin>-->
 <!--        </plugins>-->
-<!--        web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.company.Main
+
+<!--
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.company.Main
 web: java -jar -Dserver.port=$9090 target/java-getting-started-1.0.jar
 -->
+        
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
