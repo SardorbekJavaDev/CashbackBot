@@ -95,4 +95,7 @@
     <!--    web: java -jar -Dserver.port=$PORT target/java-getting-started-1.0.jar-->
 
     <!--    web: java -jar target/java-getting-started-1.0.jar-->
+
+<!--    web: java -cp target/classes/:target/dependency/* com.company.Main   true-->
+
 </project>
