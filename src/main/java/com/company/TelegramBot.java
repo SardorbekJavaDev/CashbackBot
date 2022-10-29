@@ -10,7 +10,6 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
-
     @Override
     public String getBotUsername() {
         return ComponentContainer.NAME;
@@ -38,5 +37,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
 
 }
