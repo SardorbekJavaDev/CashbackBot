@@ -37,8 +37,6 @@ public class TelegramBotService {
                 ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
             } else if (messagetext.startsWith("+998") && messagetext.length() == 13) {
                 ComponentContainer.USER_SERVICE.getByFireStoreDB(messagetext, chatId);
-                sendMessage.setText("Kuting...");
-                ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
                 System.out.println("test---------------------" + messagetext);
             } else {
                 sendMessage.setChatId(String.valueOf(message.getChatId()));
@@ -47,12 +45,21 @@ public class TelegramBotService {
             }
         } else if (message.hasContact()) {
             Contact contact = message.getContact();
-            String number = "+" + contact.getPhoneNumber();
+            String number = checkNumber(contact.getPhoneNumber());
+            System.out.println("Share Contact: " + number);
             ComponentContainer.USER_SERVICE.getByFireStoreDB(number, chatId);
-            sendMessage.setText("Kuting...");
-            ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
             System.out.println("test---------------------" + number);
         }
+    }
+
+    private String checkNumber(String phoneNumber) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < phoneNumber.length(); i++) {
+            if (phoneNumber.charAt(i) != ' ') {
+                builder.append(phoneNumber.charAt(i));
+            }
+        }
+        return "+" + builder;
     }
 
     private void startCommandReceived(long chatId, String name) {

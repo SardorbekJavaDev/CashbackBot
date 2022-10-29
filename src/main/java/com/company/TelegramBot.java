@@ -22,7 +22,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        System.out.println("log --->>> " + update.getMessage().getText());
+        System.out.println("log --->>> " + update.getMessage().getText() + update.getMessage().getChatId());
         ComponentContainer.TELEGRAM_BOT_SERVICE.handleText(update);
     }
 
