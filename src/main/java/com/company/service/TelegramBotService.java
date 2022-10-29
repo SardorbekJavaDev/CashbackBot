@@ -39,7 +39,6 @@ public class TelegramBotService {
                 ComponentContainer.USER_SERVICE.getByFireStoreDB(messagetext, chatId);
                 sendMessage.setText("Kuting...");
                 ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
-
                 System.out.println("test---------------------" + messagetext);
             } else {
                 sendMessage.setChatId(String.valueOf(message.getChatId()));
@@ -48,10 +47,11 @@ public class TelegramBotService {
             }
         } else if (message.hasContact()) {
             Contact contact = message.getContact();
-            ComponentContainer.USER_SERVICE.getByFireStoreDB(contact.getPhoneNumber(), chatId);
+            String number = "+" + contact.getPhoneNumber();
+            ComponentContainer.USER_SERVICE.getByFireStoreDB(number, chatId);
             sendMessage.setText("Kuting...");
             ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
-            System.out.println("test---------------------" + contact.getPhoneNumber());
+            System.out.println("test---------------------" + number);
         }
     }
 
