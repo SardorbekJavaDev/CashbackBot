@@ -61,7 +61,7 @@ public class TelegramBotService {
                 builder.append(phoneNumber.charAt(i));
             }
         }
-        return "+" + builder;
+        return String.valueOf(builder);
     }
 
     private void startCommandReceived(long chatId, String name) {
