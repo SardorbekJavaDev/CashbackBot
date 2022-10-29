@@ -39,11 +39,11 @@ public class Main {
 //        }
 
         File file = new File(ComponentContainer.PATH);
-
+        System.out.println("absolute path "+file.getAbsolutePath());
         FileInputStream serviceAccount = null;
         FirebaseOptions options;
         try {
-            serviceAccount = new FileInputStream(file.getAbsolutePath());
+            serviceAccount = new FileInputStream(ComponentContainer.PATH);
             options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://kashback-b3a23-default-rtdb.firebaseio.com")
