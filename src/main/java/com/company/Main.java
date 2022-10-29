@@ -38,8 +38,8 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        File file = new File(ComponentContainer.PATH);
-        System.out.println("absolute path "+file.getAbsolutePath());
+//        File file = new File(ComponentContainer.PATH);
+//        System.out.println("absolute path "+file.getAbsolutePath());
         FileInputStream serviceAccount = null;
         FirebaseOptions options;
         try {
