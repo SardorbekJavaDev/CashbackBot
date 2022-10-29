@@ -1,12 +1,10 @@
-package org.company;
+package com.company;
 
 
-import org.company.config.ComponentContainer;
-import org.company.service.TelegramBotService;
+import com.company.config.ComponentContainer;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendContact;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 

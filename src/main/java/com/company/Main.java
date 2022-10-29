@@ -1,9 +1,9 @@
-package org.company;
+package com.company;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import org.company.config.ComponentContainer;
+import com.company.config.ComponentContainer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -26,7 +26,7 @@ public class Main {
 
 
 
-        File file = new File("src/main/resources/serviceAccountKey.json");
+        File file = new File(ComponentContainer.PATH);
 
         FileInputStream serviceAccount = null;
         FirebaseOptions options;

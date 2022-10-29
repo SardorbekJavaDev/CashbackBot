@@ -1,4 +1,4 @@
-package org.company.entity;
+package com.company.entity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,15 +1,15 @@
-package org.company.service;
+package com.company.service;
 
+import com.company.config.ComponentContainer;
 import com.google.firebase.database.*;
-import org.company.config.ComponentContainer;
-import org.company.entity.User;
+import com.company.entity.User;
 
 import java.util.Arrays;
 
 public class UserService {
 
 
-    public String getByFireStoreDB(String number, Long chatId, Integer messageId) {
+    public String getByFireStoreDB(String number, Long chatId) {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("users_all/" + number);
         String[] result = {null};
@@ -22,7 +22,7 @@ public class UserService {
                 String cashback = post.getCashback();
                 result[0] = cashback;
                 System.out.println("up" + Arrays.toString(result));
-                ComponentContainer.TELEGRAM_BOT_SERVICE.sendResult(cashback, chatId, messageId);
+                ComponentContainer.TELEGRAM_BOT_SERVICE.sendResult(cashback, chatId);
             }
 
             @Override

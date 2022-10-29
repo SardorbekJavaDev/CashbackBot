@@ -1,11 +1,9 @@
-package org.company.service;
+package com.company.service;
 
 
-import org.company.config.ComponentContainer;
-import org.company.util.KeyboardButtonUtil;
+import com.company.config.ComponentContainer;
+import com.company.util.KeyboardButtonUtil;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Contact;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -38,8 +36,7 @@ public class TelegramBotService {
                 sendMessage.setText("Xabar muvaffaqiyatli yuborildi !");
                 ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
             } else if (messagetext.startsWith("+998") && messagetext.length() == 13) {
-
-                ComponentContainer.USER_SERVICE.getByFireStoreDB(messagetext, chatId, message.getMessageId());
+                ComponentContainer.USER_SERVICE.getByFireStoreDB(messagetext, chatId);
                 sendMessage.setText("Kuting...");
                 ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
 
@@ -51,7 +48,7 @@ public class TelegramBotService {
             }
         } else if (message.hasContact()) {
             Contact contact = message.getContact();
-            ComponentContainer.USER_SERVICE.getByFireStoreDB(contact.getPhoneNumber(), chatId, message.getMessageId());
+            ComponentContainer.USER_SERVICE.getByFireStoreDB(contact.getPhoneNumber(), chatId);
             sendMessage.setText("Kuting...");
             ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
             System.out.println("test---------------------" + contact.getPhoneNumber());
@@ -80,19 +77,11 @@ public class TelegramBotService {
         ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
     }
 
-    public void sendResult(String value, Long chatId, Integer messageId) {
-        EditMessageText editMessageText = new EditMessageText();
-        editMessageText.setChatId(chatId);
-        editMessageText.setMessageId(messageId);
-        editMessageText.setText("Marhamat sizning cashbackingiz !\nCashback - " + value + "  \uD83D\uDCB0");
-        ComponentContainer.MY_TELEGRAM_BOT.send(editMessageText);
-        System.out.println("Send message " + value);
-
-//
-//        SendMessage sendMessage = new SendMessage();
-//        sendMessage.setChatId(chatId);
-//        System.out.println("test test test test test " + value);
-//        sendMessage.setText("Marhamat sizning cashbackingiz !\nCashback - " + value + "  \uD83D\uDCB0");
-//        ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
+    public void sendResult(String value, Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        System.out.println("test test test test test " + value);
+        sendMessage.setText("Marhamat sizning cashbackingiz !\nCashback - " + value + "  \uD83D\uDCB0");
+        ComponentContainer.MY_TELEGRAM_BOT.send(sendMessage);
     }
 }
