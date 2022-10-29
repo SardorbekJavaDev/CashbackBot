@@ -35,8 +35,6 @@ public class TelegramBot extends TelegramLongPollingBot {
                 execute((SendMessage) object);
             } else if (object instanceof SendContact) {
                 execute((SendContact) object);
-            } else if (object instanceof EditMessageText) {
-                execute((EditMessageText) object);
             }
         } catch (TelegramApiException e) {
             e.printStackTrace();
