@@ -8,9 +8,9 @@ import com.company.service.UserService;
 @Data
 public class ComponentContainer {
 
-    public static final String NAME = "KundalikFikrlarMaqsadlarBot";
-    public static final String TOKEN = "5559421571:AAGrJU4DKp6AM5fxhKcO3-B3EGGPsoi-WvM";
-    public static final String ADMIN = "1438229631";
+    public static final String NAME = "panda_cashbot";
+    public static final String TOKEN = "5774652487:AAFPup9Dg-ihLoIZOAI564wgoJOc1IR30sc";
+    public static final String ADMIN = "816267587";
     public static final String PATH = "/app/src/main/resources/serviceAccountKey.json";
 
     public static TelegramBot MY_TELEGRAM_BOT;
