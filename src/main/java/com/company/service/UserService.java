@@ -14,14 +14,13 @@ public class UserService {
         DatabaseReference ref = database.getReference("users_all/" + number);
         String[] result = {null};
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User post = dataSnapshot.getValue(User.class);
                 String cashback = post.getCashback();
                 result[0] = cashback;
-                System.out.println("up" + Arrays.toString(result));
                 ComponentContainer.TELEGRAM_BOT_SERVICE.sendResult(cashback, chatId);
             }
 
