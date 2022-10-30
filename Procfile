@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/CashbackBot-1.0-jar-with-dependencies.jar -Dserver.port=$PORT $JAR_OPTS
+web: java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes/:target/dependency
