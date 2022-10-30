@@ -8,10 +8,10 @@ import lombok.Data;
 @Data
 public class ComponentContainer {
 
-    public static final String NAME = "panda_cashbot";
-    public static final String TOKEN = "5774652487:AAFPup9Dg-ihLoIZOAI564wgoJOc1IR30sc";
-    public static final String ADMIN = "816267587";
-    public static final String PATH = "src/main/resources/serviceAccountKey.json";
+    public static final String NAME = "your bots username";
+    public static final String TOKEN = "your token";
+    public static final String ADMIN = "your telegram id";
+    public static final String PATH = "src/main/resources/serviceAccountKey.json"; // this is for firebase
 
     public static TelegramBot MY_TELEGRAM_BOT;
 
