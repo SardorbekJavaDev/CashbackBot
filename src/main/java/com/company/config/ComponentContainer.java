@@ -1,9 +1,9 @@
 package com.company.config;
 
-import com.company.service.TelegramBotService;
-import lombok.Data;
 import com.company.TelegramBot;
+import com.company.service.TelegramBotService;
 import com.company.service.UserService;
+import lombok.Data;
 
 @Data
 public class ComponentContainer {

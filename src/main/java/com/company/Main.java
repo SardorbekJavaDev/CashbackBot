@@ -11,8 +11,6 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 
 public class Main {
@@ -27,7 +25,6 @@ public class Main {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-
 
 //        try (ServerSocket serverSocket = new ServerSocket(Integer.valueOf(PORT))) {
 //            while (true) {
@@ -55,14 +52,5 @@ public class Main {
         FirebaseApp.initializeApp(options);
 
         System.out.println("Application started successfully !");
-
-        try (ServerSocket serverSocket = new ServerSocket(8080)) {
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("he");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

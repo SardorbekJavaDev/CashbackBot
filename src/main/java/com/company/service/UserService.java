@@ -1,8 +1,8 @@
 package com.company.service;
 
 import com.company.config.ComponentContainer;
-import com.google.firebase.database.*;
 import com.company.entity.User;
+import com.google.firebase.database.*;
 
 import java.util.Arrays;
 
